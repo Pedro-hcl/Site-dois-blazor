@@ -1,0 +1,32 @@
+@page "/media"
+@rendermode InteractiveServer
+
+<PageTitle>Media</PageTitle>
+
+<h1>Média de notas</h1>
+
+    <p>Nota do primeiro aluno: @nota1  Nota do segundo aluno: @nota2 </p>
+    <input type="text" @bind="nota1" placeholder="Primeira nota"/>
+    <input type="text" @bind="nota2" placeholder="Segunda nota"/>
+    
+
+<button @onclick="CalcularMedia">Calcular média</button>
+
+<p> Média calculada: @media </p>
+
+@if   (media >= 5)
+{
+    <p>Aprovado</p>
+}
+else
+{
+    <p>Reprovado</p>
+}
+@code {
+    private double nota1, nota2, media;
+
+    private void CalcularMedia()
+    {
+        media = nota1 + nota2 / 2;
+    }
+}
