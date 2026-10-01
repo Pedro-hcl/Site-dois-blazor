@@ -5,7 +5,7 @@
 
 <h1>Média de notas</h1>
 
-    <p>Nota do primeiro aluno: @nota1  Nota do segundo aluno: @nota2 </p>
+    <p>Primeira nota: @nota1  <br> Segunda nota: @nota2 </p>
     <input type="text" @bind="nota1" placeholder="Primeira nota"/>
     <input type="text" @bind="nota2" placeholder="Segunda nota"/>
     
@@ -14,13 +14,13 @@
 
 <p> Média calculada: @media </p>
 
-@if   (media >= 5)
+@if   (media >= 7.0)
 {
-    <p>Aprovado</p>
+    <p style="color: green;">Aprovado</p>
 }
 else
 {
-    <p>Reprovado</p>
+    <p style="color: red;">Reprovado</p>
 }
 @code {
     private double nota1, nota2, media;
